@@ -10,7 +10,7 @@ const router = createRouter({
     history,
     routes:[
         {path:'/', component: Home},
-        {path: '/xxx' , component: Doc}
+        {path: '/doc' , component: Doc}
     ]
 })
 const app = createApp(App)
