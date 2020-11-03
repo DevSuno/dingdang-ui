@@ -4,7 +4,8 @@
 
 <script lang="ts">
     import { ref, provide } from 'vue';
-    import {router} from './router'
+    import { router } from './router';
+
     export default {
         name: 'App',
         setup() {
