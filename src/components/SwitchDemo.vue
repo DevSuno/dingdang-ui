@@ -1,86 +1,14 @@
 <template>
     <div>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
-        <p>switch组件测试</p>
+        <Switch/>
     </div>
 </template>
 
 <script lang="ts">
-    export default {};
+    import Switch from '../lib/Switch.vue';
+    export default {
+        components:{Switch}
+    };
 </script>
 
 <style lang="scss" scoped>
