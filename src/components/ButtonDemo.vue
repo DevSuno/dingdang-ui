@@ -8,6 +8,12 @@
         <Button theme="link">link Button</Button>
         <Button theme="text">text Button</Button>
     </div>
+    <h1>示例 2</h1>
+    <div>
+        <Button size="big">大大 Button</Button>
+        <Button>默认 Button</Button>
+        <Button size="small">小小 Button</Button>
+    </div>
 </template>
 
 <script lang="ts">

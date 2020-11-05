@@ -1,5 +1,5 @@
 <template>
-    <button :class="{[`dingdang-theme-${theme}`]: theme}"
+    <button :class="classes"
             class="dingdang-button">
         <slot/>
     </button>
@@ -7,12 +7,28 @@
 </template>
 
 <script lang="ts">
+    import { computed } from 'vue';
+
     export default {
         props: {
             theme: {
                 type: String,
                 default: 'button'
-            }
+            },
+            size: {
+                type: String,
+                default: 'normal',
+            },
+        },
+        setup(props) {
+            const { theme, size } = props;
+            const classes = computed(() => {
+                return {
+                    [`dingdang-theme-${theme}`]: theme,
+                    [`dingdang-size-${size}`]: size,
+                };
+            });
+            return { classes };
         },
     };
 </script>
@@ -72,6 +88,20 @@
 
             &:hover, &:focus {
                 background: darken(white, 5%);;
+            }
+        }
+
+        &.dingdang-theme-button {
+            &.dingdang-size-big {
+                font-size: 24px;
+                height: 48px;
+                padding: 0 16px
+            }
+
+            &.dingdang-size-small {
+                font-size: 12px;
+                height: 20px;
+                padding: 0 4px;
             }
         }
     }
