@@ -19,13 +19,18 @@
                 type: String,
                 default: 'normal',
             },
+            level:{
+                type: String,
+                default: 'normal',
+            }
         },
         setup(props) {
-            const { theme, size } = props;
+            const { theme, size, level } = props;
             const classes = computed(() => {
                 return {
                     [`dingdang-theme-${theme}`]: theme,
                     [`dingdang-size-${size}`]: size,
+                    [`dingdang-level-${level}`]: level,
                 };
             });
             return { classes };
@@ -38,6 +43,7 @@
     $border-color: #d9d9d9;
     $blue: #40a9ff;
     $radius: 4px;
+    $red: red;
     .dingdang-button {
         box-sizing: border-box;
         height: $h;
@@ -52,6 +58,7 @@
         border: 1px solid $border-color;
         border-radius: $radius;
         box-shadow: 0 1px 0 fade-out(black, 0.95);
+        transition: background 250ms;
 
         & + & {
             margin-left: 8px;
@@ -102,5 +109,29 @@
             height: 20px;
             padding: 0 4px;
         }
+
+        &.dingdang-level-main {
+            background: $blue;
+            color: white;
+            border-color: $blue;
+            &:hover,
+            &:focus {
+                background: darken($blue, 10%);
+                border-color: darken($blue, 10%);
+            }
+        }
+
+        &.dingdang-level-danger {
+            background: $red;
+            border-color: $red;
+            color: white;
+            &:hover,
+            &:focus {
+                background: darken($red, 10%);
+                border-color: darken($red, 10%);
+            }
+        }
+
+
     }
 </style>
