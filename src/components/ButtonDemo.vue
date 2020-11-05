@@ -4,10 +4,9 @@
     </div>
     <h1>示例 1</h1>
     <div>
-        <Button theme="">测试 Button</Button>
-        <Button theme="button">测试 Button</Button>
-        <Button theme="link">测试 Button</Button>
-        <Button theme="text">测试 Button</Button>
+        <Button theme="button">默认 Button</Button>
+        <Button theme="link">link Button</Button>
+        <Button theme="text">text Button</Button>
     </div>
 </template>
 
