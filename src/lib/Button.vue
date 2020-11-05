@@ -2,6 +2,7 @@
     <button :class="classes"
             :disabled="disabled"
             class="dingdang-button">
+        <span v-if="loading" class="dingdang-loadingIndicator"></span>
         <slot/>
     </button>
 
@@ -25,6 +26,10 @@
                 default: 'normal',
             },
             disable: {
+                type: Boolean,
+                default: false,
+            },
+            loading: {
                 type: Boolean,
                 default: false,
             }
@@ -157,5 +162,22 @@
                 color: $grey;
             }
         }
+
+        > .dingdang-loadingIndicator{
+            width: 14px;
+            height: 14px;
+            display: inline-block;
+            margin-right: 4px;
+            border-radius: 8px;
+            border-color: $blue $blue $blue transparent;
+            border-style: solid;
+            border-width: 2px;
+            animation: dingdang-loading 1s infinite linear;
+        }
+
+    }
+    @keyframes dingdang-loading {
+        0%{transform: rotate(0deg)}
+        100%{transform: rotate(360deg)}
     }
 </style>
