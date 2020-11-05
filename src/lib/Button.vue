@@ -1,5 +1,5 @@
 <template>
-    <button :class="{[`theme-${theme}`]: theme}"
+    <button :class="{[`dingdang-theme-${theme}`]: theme}"
             class="dingdang-button">
         <slot/>
     </button>
@@ -16,7 +16,7 @@
         },
     };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     $h: 32px;
     $color: #333;
     $border-color: #d9d9d9;

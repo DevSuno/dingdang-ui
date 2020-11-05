@@ -1,5 +1,5 @@
 <template>
-    <button :class="{checked : value}" @click="toggle">
+    <button class="dingdang-switch" :class="{'dingdang-checked' : value}" @click="toggle">
         <span></span>
     </button>
 </template>
@@ -18,10 +18,10 @@
     };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     $h: 22px;
     $h2: $h - 4px;
-    button {
+    .dingdang-switch {
         height: $h;
         width: $h*2;
         border: none;
@@ -40,11 +40,11 @@
             transition: all 250ms;
         }
 
-        &.checked {
+        &.dingdang-checked {
             background: #1890ff;
         }
 
-        &.checked > span {
+        &.dingdang-checked > span {
             left: calc(100% - #{$h2} - 2px);
         }
 
@@ -58,7 +58,7 @@
             }
         }
 
-        &.checked:active {
+        &.dingdang-checked:active {
             > span {
                 width: $h2 + 4px;
                 margin-left: -4px;
