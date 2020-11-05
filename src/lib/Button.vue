@@ -1,5 +1,6 @@
 <template>
     <button :class="classes"
+            :disabled="disabled"
             class="dingdang-button">
         <slot/>
     </button>
@@ -19,9 +20,13 @@
                 type: String,
                 default: 'normal',
             },
-            level:{
+            level: {
                 type: String,
                 default: 'normal',
+            },
+            disable: {
+                type: Boolean,
+                default: false,
             }
         },
         setup(props) {
@@ -44,6 +49,7 @@
     $blue: #40a9ff;
     $radius: 4px;
     $red: red;
+    $grey: grey;
     .dingdang-button {
         box-sizing: border-box;
         height: $h;
@@ -114,6 +120,7 @@
             background: $blue;
             color: white;
             border-color: $blue;
+
             &:hover,
             &:focus {
                 background: darken($blue, 10%);
@@ -125,6 +132,7 @@
             background: $red;
             border-color: $red;
             color: white;
+
             &:hover,
             &:focus {
                 background: darken($red, 10%);
@@ -132,6 +140,22 @@
             }
         }
 
+        &.dingdang-theme-button {
+            &[disabled] {
+                cursor: not-allowed;
+                color: $grey;
 
+                &:hover {
+                    border-color: $grey;
+                }
+            }
+        }
+
+        &.dingdang-theme-link, &.dingdang-theme-text {
+            &[disabled] {
+                cursor: not-allowed;
+                color: $grey;
+            }
+        }
     }
 </style>
