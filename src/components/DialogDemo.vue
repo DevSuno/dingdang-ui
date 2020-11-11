@@ -8,7 +8,10 @@
     <!--
         <Dialog :visible="x" @update:visible="x = $event"></Dialog>
     -->
-    <Dialog :cancel="f2" :closeOnClickOverlay="false" :ok="f1" v-model:visible="x"></Dialog>
+    <Dialog :cancel="f2" :closeOnClickOverlay="false" :ok="f1" v-model:visible="x">
+        <div>h1</div>
+        <div>h2</div>
+    </Dialog>
 
 </template>
 

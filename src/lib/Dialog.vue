@@ -3,10 +3,12 @@
         <div @click="closeOnClickOverlay" class="dingdang-dialog-overlay"></div>
         <div class="dingdang-dialog-wrapper">
             <div class="dingdang-dialog">
-                <header>标题<span @click="close" class="dingdang-dialog-close"></span></header>
+                <header>
+                    {{title}}
+                    <span @click="close" class="dingdang-dialog-close"></span>
+                </header>
                 <main>
-                    <p>第一行</p>
-                    <p>第二行</p>
+                    <slot/>
                 </main>
                 <footer>
                     <Button @click="ok">OK</Button>
@@ -35,6 +37,10 @@
             },
             cancel: {
                 type: Function,
+            },
+            title: {
+                type: String,
+                default: '提示'
             }
         },
         components: { Button },
