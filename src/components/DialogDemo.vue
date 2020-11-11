@@ -5,7 +5,11 @@
             <Button @click="toggle">toggle</Button>
         </div>
     </div>
-    <Dialog :visible="x"></Dialog>
+    <!--
+        <Dialog :visible="x" @update:visible="x = $event"></Dialog>
+    -->
+    <Dialog :cancel="f2" :closeOnClickOverlay="false" :ok="f1" v-model:visible="x"></Dialog>
+
 </template>
 
 <script lang="ts">
@@ -20,7 +24,12 @@
             const toggle = () => {
                 x.value = !x.value;
             };
-            return { x, toggle };
+            const f1 = () => {
+                return false;
+            };
+            const f2 = () => {
+            };
+            return { x, toggle, f1, f2 };
         }
     };
 </script>
