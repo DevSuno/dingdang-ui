@@ -1,21 +1,23 @@
 <template>
     <template v-if="visible">
-        <div @click="closeOnClickOverlay" class="dingdang-dialog-overlay"></div>
-        <div class="dingdang-dialog-wrapper">
-            <div class="dingdang-dialog">
-                <header>
-                    <slot name="title"/>
-                    <span @click="close" class="dingdang-dialog-close"></span>
-                </header>
-                <main>
-                    <slot name="content"/>
-                </main>
-                <footer>
-                    <Button @click="ok">OK</Button>
-                    <Button @click="cancel">Cancel</Button>
-                </footer>
+        <Teleport to="body">
+            <div @click="closeOnClickOverlay" class="dingdang-dialog-overlay"></div>
+            <div class="dingdang-dialog-wrapper">
+                <div class="dingdang-dialog">
+                    <header>
+                        <slot name="title"/>
+                        <span @click="close" class="dingdang-dialog-close"></span>
+                    </header>
+                    <main>
+                        <slot name="content"/>
+                    </main>
+                    <footer>
+                        <Button @click="ok">OK</Button>
+                        <Button @click="cancel">Cancel</Button>
+                    </footer>
+                </div>
             </div>
-        </div>
+        </Teleport>
     </template>
 </template>
 
