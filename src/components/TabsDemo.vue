@@ -1,11 +1,22 @@
 <template>
     <div>
-        tabs 组件测试
+        <h1>示例 1</h1>
+        <Tabs>
+            <tab>内容 1</tab>
+            <tab>内容 2</tab>
+        </Tabs>
     </div>
 </template>
 
 <script lang="ts">
-    export default {};
+    import Tab from '../lib/Tab.vue';
+    import Tabs from '../lib/Tabs.vue';
+
+    export default {
+        components: {
+            Tab, Tabs
+        }
+    };
 </script>
 
 <style lang="scss" scoped>
