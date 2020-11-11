@@ -4,11 +4,11 @@
         <div class="dingdang-dialog-wrapper">
             <div class="dingdang-dialog">
                 <header>
-                    {{title}}
+                    <slot name="title"/>
                     <span @click="close" class="dingdang-dialog-close"></span>
                 </header>
                 <main>
-                    <slot/>
+                    <slot name="content"/>
                 </main>
                 <footer>
                     <Button @click="ok">OK</Button>
@@ -38,10 +38,6 @@
             cancel: {
                 type: Function,
             },
-            title: {
-                type: String,
-                default: '提示'
-            }
         },
         components: { Button },
         setup(props, context) {
