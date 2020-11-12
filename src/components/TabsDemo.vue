@@ -2,8 +2,8 @@
     <div>
         <h1>示例 1</h1>
         <Tabs>
-            <tab>内容 1</tab>
-            <tab>内容 2</tab>
+            <tab title="导航 1">内容 1</tab>
+            <tab title="导航 2">内容 2</tab>
         </Tabs>
     </div>
 </template>
