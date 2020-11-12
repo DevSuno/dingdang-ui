@@ -8,12 +8,14 @@
                  v-for="(t,index) in titles">
                 {{t}}
             </div>
+            <div class="dingdang-tabs-nav-indicator"></div>
+
         </div>
         <div class="dingdang-tabs-content">
             <component :class="{selected: c.props.title === selected }"
-                       v-for="c in defaults"
                        :is="c"
-                       class="dingdang-tabs-content-item"/>
+                       class="dingdang-tabs-content-item"
+                       v-for="c in defaults"/>
         </div>
     </div>
 </template>
@@ -65,6 +67,7 @@
             display: flex;
             color: $color;
             border-bottom: 1px solid $border-color;
+            position: relative;
 
             &-item {
                 padding: 8px 0;
@@ -79,7 +82,17 @@
                     color: $blue;
                 }
             }
+
+            &-indicator {
+                position: absolute;
+                height: 3px;
+                background: $blue;
+                left: 0;
+                bottom: -1px;
+                width: 100px;
+            }
         }
+
 
         &-content {
             padding: 8px 0;
@@ -91,6 +104,7 @@
                     display: block;
                 }
             }
+
         }
     }
 </style>
