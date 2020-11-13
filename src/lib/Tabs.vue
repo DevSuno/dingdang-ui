@@ -32,9 +32,11 @@
             }
         },
         setup(props, context) {
+
             const selectedItem = ref<HTMLDivElement>(null);
             const indicator = ref<HTMLDivElement>(null);
             const container = ref<HTMLDivElement>(null);
+
             onMounted(() => {
                 watchEffect(() => {
                     const { width } = selectedItem.value.getBoundingClientRect();
@@ -52,21 +54,17 @@
                     throw new Error('Tabs 子标签必须是 Tab');
                 }
             });
+
             const titles = defaults.map((tag) => {
                 return tag.props.title;
             });
-            const current = computed(() => {
-                return defaults.filter((tag) => {
-                    return tag.props.title === props.selected;
-                })[0];
-            });
+
             const select = (title: string) => {
                 context.emit('update:selected', title);
             };
             return {
                 defaults,
                 titles,
-                current,
                 select,
                 selectedItem,
                 indicator,
