@@ -1,7 +1,9 @@
 <template>
     <div class="topnav">
         <div class="logo">
-            LOGO
+            <svg class="icon">
+                <use xlink:href="#icon-logo"></use>
+            </svg>
         </div>
         <ul class="menu">
             <li>菜单1</li>
@@ -28,6 +30,7 @@
 </script>
 
 <style lang="scss" scoped>
+    $color: #007974;
     .topnav {
         display: flex;
         padding: 16px;
@@ -38,10 +41,15 @@
         z-index: 1;
         justify-content: center;
         align-items: center;
+        color: $color;
 
         > .logo {
             max-width: 6em;
             margin-right: auto;
+            >svg {
+                width: 32px;
+                height: 32px;
+            }
         }
 
         > .menu {
