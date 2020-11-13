@@ -3,7 +3,7 @@
         <div class="dingdang-tabs-nav" ref="container">
             <div :class="{selected: t=== selected}"
                  :key="index"
-                 :ref="el => { if (el) navItems[index] = el }"
+                 :ref="el => { if (t===selected) selectedItem = el }"
                  @click="select(t)"
                  class="dingdang-tabs-nav-item"
                  v-for="(t,index) in titles">
@@ -32,23 +32,14 @@
             }
         },
         setup(props, context) {
-            const navItems = ref<HTMLDivElement[]>([]);
+            const selectedItem = ref<HTMLDivElement>(null);
             const indicator = ref<HTMLDivElement>(null);
             const container = ref<HTMLDivElement>(null);
             const x = () => {
-                const divs = navItems.value;
-                const result = divs.filter(div => div.classList.contains('selected'))[0];
-                console.log(result);
-                const {
-                    width
-                } = result.getBoundingClientRect();
+                const { width } = selectedItem.value.getBoundingClientRect();
                 indicator.value.style.width = width + 'px';
-                const {
-                    left: left1
-                } = container.value.getBoundingClientRect();
-                const {
-                    left: left2
-                } = result.getBoundingClientRect();
+                const { left: left1 } = container.value.getBoundingClientRect();
+                const { left: left2 } = selectedItem.value.getBoundingClientRect();
                 const left = left2 - left1;
                 indicator.value.style.left = left + 'px';
             };
@@ -77,7 +68,7 @@
                 titles,
                 current,
                 select,
-                navItems,
+                selectedItem,
                 indicator,
                 container
             };
