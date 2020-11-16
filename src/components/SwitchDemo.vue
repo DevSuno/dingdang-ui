@@ -10,7 +10,8 @@
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre>{{Switch1Demo.__sourceCode}}</pre>
+                  <pre class="language-html"
+                      v-html="Prism.highlight( Switch2Demo.__sourceCode,Prism.languages.html, 'html')"/>
             </div>
         </div>
         <div class="demo">
@@ -22,32 +23,37 @@
                 <Button>查看代码</Button>
             </div>
             <div class="demo-code">
-                <pre>{{Switch2Demo.__sourceCode}}</pre>
+                <pre class="language-html"
+                     v-html="Prism.highlight( Switch2Demo.__sourceCode,Prism.languages.html, 'html')"/>
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts">
-    import Button from '../lib/Button.vue'
-    import Switch1Demo from './Switch1.demo.vue'
-    import Switch2Demo from './Switch2.demo.vue'
-    import {
-        ref
-    } from 'vue'
+    import Button from '../lib/Button.vue';
+    import Switch1Demo from './Switch1.demo.vue';
+    import Switch2Demo from './Switch2.demo.vue';
+    import { ref } from 'vue';
+    import 'prismjs';
+    import 'prismjs/themes/prism.css';
+
+    const Prism = (window as any).Prism;
+
     export default {
         components: {
             Button
         },
         setup() {
-            const bool = ref(false)
+            const bool = ref(false);
             return {
                 bool,
                 Switch1Demo,
-                Switch2Demo
-            }
+                Switch2Demo,
+                Prism
+            };
         }
-    }
+    };
 </script>
 
 <style lang="scss" scoped>
@@ -55,22 +61,27 @@
     .demo {
         border: 1px solid $border-color;
         margin: 16px 0 32px;
-        >h2 {
+
+        > h2 {
             font-size: 20px;
             padding: 8px 16px;
             border-bottom: 1px solid $border-color;
         }
+
         &-component {
             padding: 16px;
         }
+
         &-actions {
             padding: 8px 16px;
             border-top: 1px dashed $border-color;
         }
+
         &-code {
             padding: 8px 16px;
             border-top: 1px dashed $border-color;
-            >pre {
+
+            > pre {
                 line-height: 1.1;
                 font-family: Consolas, 'Courier New', Courier, monospace;
                 margin: 0;
