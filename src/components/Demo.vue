@@ -1,8 +1,8 @@
 <template>
     <div class="demo">
-        <h2>{{components.__sourceCodeTitle}}</h2>
+        <h2>{{component.__sourceCodeTitle}}</h2>
         <div class="demo-component">
-            <component :is="components"></component>
+            <component :is="component"/>
         </div>
         <div class="demo-actions">
             <Button @click="toggleButton">查看代码</Button>
@@ -25,19 +25,19 @@
 
     export default {
         props: {
-            components: Object,
+            component: Object,
         },
-        components :{
+        components: {
             Button
         },
         setup(props) {
-            const visibleCode = ref(false)
+            const visibleCode = ref(false);
             const html = computed(() => {
-                return Prism.highlight(props.components.__sourceCode, Prism.languages.html, 'html');
+                return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html');
             });
-            const toggleButton = ()=>{
-                visibleCode.value = !visibleCode.value
-            }
+            const toggleButton = () => {
+                visibleCode.value = !visibleCode.value;
+            };
             return { Prism, html, visibleCode, toggleButton };
         }
     };

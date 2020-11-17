@@ -65,6 +65,7 @@
         align-items: center;
         white-space: nowrap;
         background: white;
+        margin: 5px 5px;
         color: $color;
         border: 1px solid $border-color;
         border-radius: $radius;
