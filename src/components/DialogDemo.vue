@@ -1,43 +1,20 @@
 <template>
     <div>
-        dialog组件测试
-        <div>
-            <Button @click="toggle">toggle</Button>
-        </div>
+        <h1>Dialog 示例</h1>
+        <Demo :component="Dialog1Demo"/>
+        <Demo :component="Dialog2Demo"/>
     </div>
-    <!--
-        <Dialog :visible="x" @update:visible="x = $event"></Dialog>
-    -->
-    <Dialog :cancel="f2" :closeOnClickOverlay="false" :ok="f1" v-model:visible="x">
-        <template v-slot:title>
-            <strong>加粗的标题</strong>
-        </template>
-        <template v-slot:content>
-            <strong>hi</strong>
-            <div>hi2</div>
-        </template>
-    </Dialog>
-
 </template>
 
 <script lang="ts">
-    import Dialog from '../lib/Dialog.vue';
-    import Button from '../lib/Button.vue';
-    import { ref } from 'vue';
+    import Demo from './Demo.vue';
+    import Dialog1Demo from './Dialog/Dialog1.demo.vue';
+    import Dialog2Demo from './Dialog/Dialog2.demo.vue';
 
     export default {
-        components: { Dialog, Button },
+        components: { Demo },
         setup() {
-            const x = ref(false);
-            const toggle = () => {
-                x.value = !x.value;
-            };
-            const f1 = () => {
-                return false;
-            };
-            const f2 = () => {
-            };
-            return { x, toggle, f1, f2 };
+            return { Dialog1Demo, Dialog2Demo };
         }
     };
 </script>
