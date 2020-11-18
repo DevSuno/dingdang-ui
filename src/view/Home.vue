@@ -1,6 +1,5 @@
 <template>
     <div class="topnavAndBanner">
-        <Topnav/>
         <div class="banner">
             <h1>dingdang-ui</h1>
             <h2>一个厉害的 UI 框架</h2>

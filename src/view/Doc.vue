@@ -92,6 +92,8 @@
         top: 0;
         left: 0;
         height: 100%;
+        z-index: 10;
+        margin-top: 50px;
 
         > h2 {
             margin-bottom: 4px;

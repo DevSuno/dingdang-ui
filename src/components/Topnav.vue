@@ -43,6 +43,7 @@
 <style lang="scss" scoped>
     $color: #007974;
     .topnav {
+        background: lightblue;
         display: flex;
         padding: 16px;
         position: fixed;
