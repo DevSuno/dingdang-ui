@@ -3,6 +3,9 @@
 # 当发生错误时中止脚本
 set -e
 
+#删除原有的 dist 目录
+rm -rf dist
+
 # 构建
 yarn build
 
@@ -20,6 +23,7 @@ git commit -m 'deploy'
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:DevSuno/dingdang-ui-web.git
+git branch -M main
+git push -u git@github.com:DevSuno/dingdang-ui-web.git main
 
 cd -
