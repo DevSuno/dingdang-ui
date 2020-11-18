@@ -24,6 +24,6 @@ git commit -m 'deploy'
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
 git branch -M main
-git push -u git@github.com:DevSuno/dingdang-ui-web.git main
+git push -f git@github.com:DevSuno/dingdang-ui-web.git main
 
 cd -
