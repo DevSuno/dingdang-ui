@@ -1,6 +1,8 @@
 {
   "name": "dingdang-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "files": ["dist/lib/*"],
+  "main": "dist/lib/dingdang.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build"
