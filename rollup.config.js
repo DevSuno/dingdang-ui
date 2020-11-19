@@ -10,8 +10,8 @@ export default {
         globals: {
             vue: 'Vue'
         },
-        name: 'Gulu',
-        file: 'dist/lib/gulu.js',
+        name: 'dingdang',
+        file: 'dist/lib/dingdang.js',
         format: 'umd',
         plugins: [terser()]
     },
